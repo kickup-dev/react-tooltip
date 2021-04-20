@@ -1890,7 +1890,6 @@ var ReactTooltip =
                                           disable = _this$state.disable;
                                         var afterShow = this.props.afterShow;
                                         var placeholder = this.getTooltipContent();
-                                        var delayTime = parseInt(delayShow, 10);
                                         var eventTarget =
                                           e.currentTarget || e.target; // Check if the mouse is actually over the tooltip, if so don't hide the tooltip
 
@@ -1904,6 +1903,10 @@ var ReactTooltip =
                                         ) {
                                           return;
                                         }
+
+                                        var delayTime = !this.state.show
+                                          ? parseInt(delayShow, 10)
+                                          : 0;
 
                                         var updateState = function updateState() {
                                           if (
@@ -1933,7 +1936,7 @@ var ReactTooltip =
 
                                         clearTimeout(this.delayShowLoop);
 
-                                        if (delayShow) {
+                                        if (delayTime) {
                                           this.delayShowLoop = setTimeout(
                                             updateState,
                                             delayTime

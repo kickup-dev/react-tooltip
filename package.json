@@ -158,11 +158,5 @@
   },
   "lint-staged": {
     "*.{js,ts}": "yarn eslint:fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn pretest",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }

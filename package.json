@@ -151,6 +151,11 @@
     ],
     "branch": "master"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "lint-staged": {
     "*.{js,ts}": "yarn eslint:fix"
   }
